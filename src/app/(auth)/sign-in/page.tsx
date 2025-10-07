@@ -175,7 +175,7 @@ const SignIn = () => {
           </div>
 
           <p className="text-sm mt-4 text-center text-[#333]">
-            Don't have an account?{" "}
+            Don&apos;t have an account?
             <Link href="/sign-up" className="text-[#3B82F6] font-medium">
               Sign up
             </Link>

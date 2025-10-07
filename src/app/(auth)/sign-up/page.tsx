@@ -7,6 +7,7 @@ import { motion } from "framer-motion"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import SignupImage from "@/assets/images/student-school.svg"
+import Image from "next/image"
 
 
 const SignUp = () => {
@@ -46,7 +47,7 @@ const SignUp = () => {
           <div onClick={() => navigate.push("/")} className="min-w-[150px] cursor-pointer">
             {/* <img src={logo} alt="logo" className="w-[150px] md:w-[200px]" /> */}
           </div>
-          <img src={SignupImage} alt="signup" className="w-full max-w-[400px]" />
+          <Image src={SignupImage} alt="signup" className="w-full max-w-[400px]" width={1000} height={1000}/>
         </motion.div>
 
         {/* Right Side Form */}
