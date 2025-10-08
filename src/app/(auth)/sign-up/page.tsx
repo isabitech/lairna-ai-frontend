@@ -30,7 +30,22 @@ const SignUp = () => {
       ...prev,
       [e.target.name]: e.target.value,
     }));
+
+
   };
+   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  setLoading(true);
+
+  localStorage.setItem("user", JSON.stringify(formData));
+
+  
+  setTimeout(() => {
+    setLoading(false);
+    navigate.push("/dashboard");
+  }, 1000);
+};
 
   return (
     <div className="w-full min-h-screen flex items-center justify-center bg-[#dae1ee]">
@@ -70,7 +85,7 @@ const SignUp = () => {
           </div>
 
           {/* Form */}
-          <form onSubmit={()=>{}} className="flex flex-col gap-4 w-full mx-auto">
+          <form onSubmit={handleSubmit}className="flex flex-col gap-4 w-full mx-auto">
             {[
               { label: "First Name", name: "firstName", type: "text" },
               { label: "Last Name", name: "lastName", type: "text" },
