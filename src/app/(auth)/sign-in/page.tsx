@@ -60,7 +60,7 @@ const SignIn = () => {
 
   return (
     
-        <div className="w-full min-h-screen flex items-center justify-center bg-[#dae1ee]">
+        <div className="w-full min-h-screen font-[poppins] flex items-center justify-center bg-[#dae1ee]">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -159,7 +159,7 @@ const SignIn = () => {
                   disabled={!active || loading}
                   className={`p-2 rounded-full transition-all duration-300 transform focus:outline-none focus:ring-2 
                     ${active
-                      ? "hover:bg-[#00968752] hover:scale-105 focus:ring-[#3B82F6] bg-[#0096872a]"
+                      ? "hover:bg-[#4f8df15c] hover:scale-105 focus:ring-[#3B82F6] bg-[#4f8df15c]"
                       : "bg-gray-300 text-gray-500 cursor-not-allowed opacity-60"
                     }`}
                   aria-label={`Sign up with ${provider}`}
