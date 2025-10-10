@@ -6,7 +6,7 @@ import { IoEyeSharp } from "react-icons/io5"
 import { motion } from "framer-motion"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import SignupImage from "@/assets/images/student-school.svg"
+import SignupImage from "@/assets/images/lady-learner.png"
 import Image from "next/image"
 
 
@@ -34,16 +34,27 @@ const SignUp = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center bg-[#dae1ee]">
+    <div className="w-full font-[poppins] min-h-screen flex items-center justify-center bg-[#dae1ee]">
       <div className="flex flex-col md:flex-row items-center justify-center gap-10 p-5 md:p-10 w-full max-w-6xl">
         
         {/* Left Side Illustration */}
         <motion.div
-          className="flex flex-col gap-5 items-center max-w-[500px] w-full"
+          className="flex flex-col gap-2 items-center max-w-[500px] w-full"
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
         >
+            <div className="w-full flex flex-col gap-2 justify-center items-center text-center">
+            <motion.h1
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ type: "spring", stiffness: 120, delay: 0.5 }}
+              className="font-bold text-xl md:text-3xl text-[#4f8df1]"
+            >
+              Get Started!
+            </motion.h1>
+            <p className="font-medium text-[#263238]">Become a Top AI Trainer</p>
+          </div>
           <div onClick={() => navigate.push("/")} className="min-w-[150px] cursor-pointer">
             {/* <img src={logo} alt="logo" className="w-[150px] md:w-[200px]" /> */}
           </div>
@@ -52,23 +63,13 @@ const SignUp = () => {
 
         {/* Right Side Form */}
         <motion.div
-          className="signup w-full max-w-[450px] flex flex-col gap-5 text-[#263238] font-sans items-center bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-6"
+          className=" w-full max-w-[450px] flex flex-col gap-5 text-[#263238] items-center bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-6"
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <div className="w-full flex flex-col gap-2 justify-center items-center text-center">
-            <motion.h1
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ type: "spring", stiffness: 120, delay: 0.5 }}
-              className="font-bold text-xl md:text-3xl text-[#009688]"
-            >
-              Get Started!
-            </motion.h1>
-            <p className="font-medium">Become fluent in the native languages of your choice.</p>
-            <p className="font-medium text-xl text-[#263238]">Join Now . . .</p>
-          </div>
+        <p className="font-medium text-xl text-[#263238]">Join Now . . .</p>
+
 
           {/* Form */}
           <form onSubmit={()=>{}} className="flex flex-col gap-4 w-full mx-auto">
@@ -80,12 +81,12 @@ const SignUp = () => {
             ].map((field, idx) => (
               <motion.fieldset
                 key={idx}
-                className="relative border-2 border-[#00968850] rounded-lg px-2 py-2 transition focus-within:border-[#009688]"
+                className="relative border-2 border-[#4f8df15c] rounded-lg px-2 py-2 transition focus-within:border-[#4f8df1]"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
               >
-                <legend className="px-1 text-sm text-[#009688]">{field.label}</legend>
+                <legend className="px-1 text-sm text-[#4f8df1]">{field.label}</legend>
                 <input
                   type={field.type}
                   name={field.name}
@@ -97,12 +98,12 @@ const SignUp = () => {
             ))}
 
             <motion.fieldset
-              className="relative border-2 border-[#00968850] rounded-lg px-2 py-2 focus-within:border-[#009688]"
+              className="relative border-2 border-[#4f8df15c] rounded-lg px-2 py-2 focus-within:border-[#4f8df1]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <legend className="px-1 text-sm text-[#009688]">Password</legend>
+              <legend className="px-1 text-sm text-[#4f8df1]">Password</legend>
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
@@ -120,12 +121,12 @@ const SignUp = () => {
             </motion.fieldset>
 
             <motion.fieldset
-              className="relative border-2 border-[#00968850] rounded-lg px-2 py-2 focus-within:border-[#009688]"
+              className="relative border-2 border-[#4f8df15c] rounded-lg px-2 py-2 focus-within:border-[#4f8df1]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
-              <legend className="px-1 text-sm text-[#009688]">Confirm Password</legend>
+              <legend className="px-1 text-sm text-[#4f8df1]">Confirm Password</legend>
               <input
                 type={showPassword ? "text" : "password"}
                 name="confirmPassword"
@@ -146,7 +147,7 @@ const SignUp = () => {
               type="submit"
               disabled={loading}
               className={`w-full rounded-lg p-2 text-white text-lg font-semibold shadow-md transition ${
-                loading ? "bg-[#80cbc4] cursor-not-allowed" : "bg-[#009688] hover:bg-[#00796B]"
+                loading ? "bg-[#80cbc4] cursor-not-allowed" : "bg-[#3B82F6] hover:bg-[#4f8df15c]"
               }`}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
@@ -160,7 +161,7 @@ const SignUp = () => {
 
             <p className="text-sm text-gray-600 text-center mt-2">
               Already have an account?{" "}
-              <Link href="/login" className="text-[#009688] font-semibold hover:underline">
+              <Link href="/sign-in" className="text-[#3B82F6] font-semibold hover:underline">
                 Login
               </Link>
             </p>
@@ -180,13 +181,13 @@ const SignUp = () => {
                   className={`p-3 rounded-full transition-all duration-300 transform focus:outline-none focus:ring-2 
                     ${
                       active
-                        ? "hover:bg-[#00968752] hover:scale-105 focus:ring-[#009688] bg-[#0096872a]"
+                        ? "hover:bg-[#4f8df15c] hover:scale-105 focus:ring-[#3B82F6] bg-[#4f8df15c]"
                         : "bg-gray-300 text-gray-500 cursor-not-allowed opacity-60"
                     }`}
                   aria-label={`Sign up with ${provider}`}
                 >
                   {loading ? (
-                    <div className="w-8 h-8 border-2 border-[#009688] border-t-transparent rounded-full animate-spin" />
+                    <div className="w-8 h-8 border-2 border-[#3B82F6] border-t-transparent rounded-full animate-spin" />
                   ) : (
                     icon
                   )}
